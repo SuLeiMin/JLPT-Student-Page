@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmnls:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{/layouts/template.html}">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Save Student Info</title>
+
+</head>
+
+<body>
+	<div layout:fragment="content">
+		<div class="container mt-5">
+
+			<h3>Save Student</h3>
+
+			<form action="#" th:action="@{/saveStudent}" th:object="${student}"
+				method="POST">
+
+				<input type="text" th:field="*{name}" placeholder="Student Name"
+					class="form-control mb-4 col-4"> <input type="text"
+					th:field="*{level}" placeholder="Student level"
+					class="form-control mb-4 col-4"> <input type="text"
+					th:field="*{levelJP}" placeholder="Student LevelJP"
+					class="form-control mb-4 col-4"> <input type="text"
+					th:field="*{address}" placeholder="Student Address"
+					class="form-control mb-4 col-4"> <input type="text"
+					th:field="*{email}" placeholder="Student Email"
+					class="form-control mb-4 col-4">
+
+				<button type="submit" class="btn btn-info col-2 ">Save
+					Student</button>
+			</form>
+
+			<hr>
+
+			<a th:href="@{/}" class="btn btn-outline-info text-decoration-none">
+				Go Back</a>
+		</div>
+	</div>
+</body>
+
+</html>
